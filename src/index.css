@@ -47,3 +47,14 @@ svg {
 		scroll-behavior: auto !important;
 	}
 }
+
+.home-character-list {
+	list-style: none;
+	display: flex;
+	width: 100%;
+	padding: 0px 16px;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: center;
+	align-items: center;
+}

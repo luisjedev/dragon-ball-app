@@ -1,16 +1,34 @@
 import { Link } from "@tanstack/react-router";
-import type { MappedCharacter } from "../../types/characters-types";
+
+import Like from "@/assets/icons/like.svg?react";
+import LikeOutline from "@/assets/icons/like-outline.svg?react";
+import type { MappedCharacter } from "@/types/characters-types";
 import styles from "./character-card.module.css";
 
 export function CharacterCard({ character }: { character: MappedCharacter }) {
+	const isFavorite = false;
+
 	return (
 		<Link
 			to="/details/$id"
 			params={{ id: character.id }}
-			className={styles.character_card}
+			className={styles["character-card"]}
 		>
-			<img src={character.image} alt={character.nombre} />
-			<h2>{character.nombre}</h2>
+			<div className={styles["character-card__image-container"]}>
+				<img
+					src={character.image}
+					alt={character.name}
+					className={styles["character-card__image"]}
+				/>
+			</div>
+			<div className={styles["character-card__content"]}>
+				<p className={styles["character-card__name"]}>
+					{character.name.toLocaleUpperCase()}
+				</p>
+				<div className={styles["character-card__favorite-icon"]}>
+					{isFavorite ? <Like /> : <LikeOutline />}
+				</div>
+			</div>
 		</Link>
 	);
 }

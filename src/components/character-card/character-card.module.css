@@ -1,6 +1,61 @@
-.character_card {
+.character-card {
 	display: flex;
+	width: 100%;
+	max-width: 172.5px;
 	flex-direction: column;
+	background-color: #000000;
+	text-decoration: none;
+	clip-path: polygon(
+		0 0,
+		100% 0,
+		100% calc(100% - 12.86px),
+		calc(100% - 12.86px) 100%,
+		0 100%
+	);
+}
+
+.character-card__image-container {
+	width: 100%;
+	height: auto;
+	max-height: 189.97px;
+	overflow: hidden;
+	position: relative;
+	background-color: #000000;
+	border-bottom: 5.38px solid #ec1d24;
+}
+
+.character-card__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.character-card__content {
+	padding: 16px 16px 24px 16px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.character-card__name {
+	margin: 0;
+	font-weight: 600;
+	font-size: 16px;
+	color: white;
+}
+
+.character-card__favorite-icon {
+	width: 12px;
+	height: 10.84px;
+	display: flex;
 	align-items: center;
 	justify-content: center;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+}
+
+.character-card__favorite-icon svg {
+	width: 100%;
+	height: 100%;
 }
