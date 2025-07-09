@@ -1,0 +1,38 @@
+.transformation-card {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.transformation-card__image-container {
+	width: 100%;
+	height: 100%;
+}
+
+.transformation-card__image-container {
+	width: 164px;
+	height: 246px;
+}
+
+.transformation-card__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	overflow: hidden;
+}
+
+.transformation-card__info {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.transformation-card__info-name {
+	font-family: "Roboto-condensed-bold", sans-serif;
+	font-size: 15px;
+}
+
+.transformation-card__info-ki {
+	font-size: 11.29px;
+}

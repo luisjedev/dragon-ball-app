@@ -7,7 +7,7 @@ interface OriginPlanet {
 	deletedAt: string | null;
 }
 
-interface Transformation {
+export interface Transformation {
 	id: number;
 	name: string;
 	image: string;

@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { CharacterDetailsCard } from "@/components/character-details-card/character-details-card";
+import { TransformationsList } from "@/components/transformations-list/transformations-list";
 import { characterByIdQueryOptions } from "@/services/get-character-by-id";
 
 export const Route = createFileRoute("/details/$id/")({
@@ -20,12 +21,13 @@ function RouteComponent() {
 	const { data } = useSuspenseQuery(characterByIdQueryOptions(id));
 
 	return (
-		<div className={"details-container"}>
+		<main className={"details-container"}>
 			<Suspense fallback={<div>Loading...</div>}>
 				<ErrorBoundary fallbackRender={() => <div>Error</div>}>
 					<CharacterDetailsCard character={data} />
+					<TransformationsList transformations={data.transformations} />
 				</ErrorBoundary>
 			</Suspense>
-		</div>
+		</main>
 	);
 }
