@@ -16,7 +16,7 @@ async function getCharacters({
 			{
 				params: {
 					limit: limit ?? import.meta.env.VITE_LIMIT_PER_CALL,
-					name: name ?? "",
+					name,
 				},
 			},
 		);
