@@ -1,7 +1,51 @@
 .header {
 	display: flex;
+	justify-content: center;
+	background-color: #000000;
+	padding: 16px;
+}
+
+.header__container {
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem;
-	color: #ec1d24;
+	width: 100%;
+	max-width: 1416px;
+}
+
+.header__logo-link {
+	display: flex;
+	width: 130px;
+	height: 52px;
+	align-items: center;
+	gap: 10px;
+}
+
+.header__logo {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.header__favorite-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	padding: 8px;
+}
+
+.header__favorite-icon-container {
+	width: 24px;
+	height: 21.68px;
+}
+
+.header__favorite-icon-container svg {
+	width: 100%;
+	height: 100%;
+}
+
+.header__favorite-count {
+	font-size: 16px;
+	color: white;
 }

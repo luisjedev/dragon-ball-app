@@ -1,3 +1,17 @@
+@font-face {
+	font-family: "Roboto-condensed";
+	font-weight: 400;
+	src:
+		local("Roboto-condensed"), url("./assets/fonts/RobotoCondensed-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-condensed-bold";
+	src:
+		local("Roboto-condensed-bold"),
+		url("./assets/fonts/RobotoCondensed-Bold.ttf");
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -10,6 +24,11 @@
 
 body {
 	min-height: 100dvh;
+	font-family: "Roboto-condensed", sans-serif;
+	line-height: 100%;
+	font-weight: 400;
+	letter-spacing: 0%;
+	font-style: normal;
 }
 input,
 button,
@@ -48,13 +67,18 @@ svg {
 	}
 }
 
+.home-container {
+	padding: 16px;
+}
+
 .home-character-list {
 	list-style: none;
 	display: flex;
 	width: 100%;
-	padding: 0px 16px;
+	max-width: 1416px;
 	flex-wrap: wrap;
 	gap: 16px;
 	justify-content: center;
 	align-items: center;
+	margin: 0 auto;
 }
