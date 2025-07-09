@@ -21,6 +21,5 @@ async function getCharacters(): Promise<MappedCharacter[]> {
 
 export const charactersQueryOptions = queryOptions({
 	queryKey: ["characters"],
-	staleTime: 1000 * 60 * 60 * 24,
 	queryFn: () => getCharacters(),
 });

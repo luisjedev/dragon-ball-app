@@ -5,17 +5,18 @@ import { ErrorBoundary } from "react-error-boundary";
 import { characterByIdQueryOptions } from "../../../services/get-character-by-id";
 
 export const Route = createFileRoute("/details/$id/")({
+	parseParams: (params) => ({
+		id: Number(params.id),
+	}),
 	loader: ({ context: { queryClient }, params }) => {
-		return queryClient.ensureQueryData(
-			characterByIdQueryOptions(Number(params.id)),
-		);
+		return queryClient.ensureQueryData(characterByIdQueryOptions(params.id));
 	},
 	component: RouteComponent,
 });
 
 function RouteComponent() {
 	const { id } = Route.useParams();
-	const { data } = useSuspenseQuery(characterByIdQueryOptions(Number(id)));
+	const { data } = useSuspenseQuery(characterByIdQueryOptions(id));
 
 	return (
 		<div>
