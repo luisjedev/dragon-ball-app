@@ -7,13 +7,13 @@ import { charactersQueryOptions } from "../services/get-characters";
 
 export const Route = createFileRoute("/")({
 	loader: ({ context: { queryClient } }) => {
-		return queryClient.ensureQueryData(charactersQueryOptions);
+		return queryClient.ensureQueryData(charactersQueryOptions());
 	},
 	component: Index,
 });
 
 function Index() {
-	const { data } = useSuspenseQuery(charactersQueryOptions);
+	const { data } = useSuspenseQuery(charactersQueryOptions());
 
 	return (
 		<div>
