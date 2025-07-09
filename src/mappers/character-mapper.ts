@@ -1,13 +1,13 @@
 import type {
 	CharacterDetailMapped,
 	CharacterDetailResponse,
-} from "../types/character-types";
-import type { Character, MappedCharacter } from "../types/characters-types";
+} from "@/types/character-types";
+import type { Character, MappedCharacter } from "@/types/characters-types";
 
 export function mapCharacter(character: Character): MappedCharacter {
 	return {
 		id: character.id,
-		nombre: character.name,
+		name: character.name,
 		image: character.image,
 	};
 }

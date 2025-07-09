@@ -34,6 +34,6 @@ export interface CharactersResponse {
 
 export interface MappedCharacter {
 	id: number;
-	nombre: string;
+	name: string;
 	image: string;
 }

@@ -1,7 +1,7 @@
 import { queryOptions } from "@tanstack/react-query";
-import { httpClient } from "../config/http-client";
-import { mapCharacters } from "../mappers/character-mapper";
-import type { Character, CharactersResponse } from "../types/characters-types";
+import { httpClient } from "@/config/http-client";
+import { mapCharacters } from "@/mappers/character-mapper";
+import type { Character, CharactersResponse } from "@/types/characters-types";
 
 async function getCharacters({
 	name,
