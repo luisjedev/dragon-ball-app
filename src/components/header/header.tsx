@@ -13,11 +13,7 @@ export function Header() {
 				<Link to="/" className={styles["header__logo-link"]}>
 					<img src={logo} alt="logo" className={styles["header__logo"]} />
 				</Link>
-				<Link
-					to="/"
-					search={{ tab: "favorites" }}
-					className={styles["header__favorite-container"]}
-				>
+				<Link to="/favorites" className={styles["header__favorite-container"]}>
 					<div className={styles["header__favorite-icon-container"]}>
 						<Like className={styles["header__favorite-icon"]} />
 					</div>

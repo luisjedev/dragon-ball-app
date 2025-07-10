@@ -76,6 +76,16 @@ svg {
 	gap: 24px;
 }
 
+.home-title {
+	padding-top: 8px;
+	text-align: start;
+	width: 100%;
+	font-size: 24px;
+	font-family: "Roboto-condensed-bold", sans-serif;
+	letter-spacing: 0%;
+	font-style: normal;
+}
+
 .home-search-container {
 	width: 100%;
 	max-width: 1416px;

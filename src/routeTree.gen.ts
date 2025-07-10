@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FavoritesIndexRouteImport } from './routes/favorites/index'
 import { Route as DetailsIdIndexRouteImport } from './routes/details/$id/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritesIndexRoute = FavoritesIndexRouteImport.update({
+  id: '/favorites/',
+  path: '/favorites/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DetailsIdIndexRoute = DetailsIdIndexRouteImport.update({
@@ -25,27 +31,31 @@ const DetailsIdIndexRoute = DetailsIdIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/favorites': typeof FavoritesIndexRoute
   '/details/$id': typeof DetailsIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/favorites': typeof FavoritesIndexRoute
   '/details/$id': typeof DetailsIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/favorites/': typeof FavoritesIndexRoute
   '/details/$id/': typeof DetailsIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/details/$id'
+  fullPaths: '/' | '/favorites' | '/details/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/details/$id'
-  id: '__root__' | '/' | '/details/$id/'
+  to: '/' | '/favorites' | '/details/$id'
+  id: '__root__' | '/' | '/favorites/' | '/details/$id/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FavoritesIndexRoute: typeof FavoritesIndexRoute
   DetailsIdIndexRoute: typeof DetailsIdIndexRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favorites/': {
+      id: '/favorites/'
+      path: '/favorites'
+      fullPath: '/favorites'
+      preLoaderRoute: typeof FavoritesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/details/$id/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FavoritesIndexRoute: FavoritesIndexRoute,
   DetailsIdIndexRoute: DetailsIdIndexRoute,
 }
 export const routeTree = rootRouteImport
