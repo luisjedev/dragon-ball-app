@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import SearchIcon from "@/assets/icons/search.svg?react";
 import { CharacterCard } from "@/components/character-card/character-card";
+import { useDebounce } from "@/hooks/use-debounce";
 import { useGetFavoritesCharacters } from "@/services/get-favorites-characters";
 import { useFavoritesStore } from "@/stores/favorites-store";
 
@@ -10,7 +11,8 @@ export const Route = createFileRoute("/favorites/")({
 });
 
 function RouteComponent() {
-	const [search, setSearch] = useState("");
+	const [inputValue, setInputValue] = useState("");
+	const debouncedSearch = useDebounce(inputValue);
 	const favoriteIds = useFavoritesStore((state) => state.favoriteIds);
 	const results = useGetFavoritesCharacters(favoriteIds);
 
@@ -19,7 +21,7 @@ function RouteComponent() {
 		.filter((character) => character !== undefined);
 
 	const filteredData = data.filter((character) =>
-		character.name.toLowerCase().includes(search.toLowerCase()),
+		character.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
 	);
 
 	return (
@@ -36,8 +38,8 @@ function RouteComponent() {
 						name="home-search-input"
 						placeholder="SEARCH A CHARACTER..."
 						className={"home-search-input"}
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
+						value={inputValue}
+						onChange={(e) => setInputValue(e.target.value)}
 					/>
 				</div>
 				<span className={"home-search-results"}>

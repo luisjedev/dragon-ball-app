@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import SearchIcon from "@/assets/icons/search.svg?react";
 import { CharacterCard } from "@/components/character-card/character-card";
+import { useDebounce } from "@/hooks/use-debounce";
 import { charactersQueryOptions } from "@/services/get-characters";
 
 export const Route = createFileRoute("/")({
@@ -13,8 +14,9 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-	const [search, setSearch] = useState("");
-	const { data, isLoading } = useQuery(charactersQueryOptions(search));
+	const [inputValue, setInputValue] = useState("");
+	const debouncedSearch = useDebounce(inputValue);
+	const { data, isLoading } = useQuery(charactersQueryOptions(debouncedSearch));
 
 	return (
 		<div className={"home-container"}>
@@ -29,8 +31,8 @@ function Index() {
 						name="home-search-input"
 						placeholder="SEARCH A CHARACTER..."
 						className={"home-search-input"}
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
+						value={inputValue}
+						onChange={(e) => setInputValue(e.target.value)}
 					/>
 				</div>
 				<span className={"home-search-results"}>
