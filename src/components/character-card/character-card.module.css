@@ -73,3 +73,13 @@
 	width: 100%;
 	height: 100%;
 }
+
+@media (min-width: 1024px) {
+	.character-card {
+		max-width: 188.57px;
+	}
+
+	.character-card__image-container {
+		width: 188.57px;
+	}
+}
