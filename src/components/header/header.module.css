@@ -36,6 +36,7 @@
 	align-items: center;
 	gap: 8px;
 	padding: 8px;
+	text-decoration: none;
 }
 
 .header__favorite-icon-container {

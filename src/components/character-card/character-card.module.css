@@ -60,7 +60,13 @@
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: transform 0.2s ease;
+	transition:
+		transform 300ms ease,
+		filter 300ms ease;
+}
+
+.character-card:hover .character-card__favorite-icon {
+	filter: brightness(0) invert(1);
 }
 
 .character-card__favorite-icon svg {

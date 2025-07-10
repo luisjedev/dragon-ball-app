@@ -1,5 +1,6 @@
 import Like from "@/assets/icons/like.svg?react";
 import LikeOutline from "@/assets/icons/like-outline.svg?react";
+import { useFavoritesStore } from "@/stores/favorites-store";
 import type { CharacterDetailMapped } from "@/types/character-types";
 import styles from "./character-details-card.module.css";
 
@@ -8,7 +9,10 @@ export function CharacterDetailsCard({
 }: {
 	character: CharacterDetailMapped;
 }) {
-	const isFavorite = false;
+	const isFavorite = useFavoritesStore((state) =>
+		state.isFavorite(character.id),
+	);
+	const toggleFavorite = useFavoritesStore((state) => state.toggleFavorite);
 
 	return (
 		<section className={styles["character-details-card-container"]}>
@@ -25,10 +29,10 @@ export function CharacterDetailsCard({
 						<p className={styles["character-details-card__info-name"]}>
 							{character.name.toLocaleUpperCase()}
 						</p>
-						<div
-							className={
-								styles["character-details-card__favorite-icon-container"]
-							}
+						<button
+							type="button"
+							onClick={() => toggleFavorite(character.id)}
+							className={styles["character-details-card__favorite-icon-button"]}
 						>
 							{isFavorite ? (
 								<Like
@@ -39,7 +43,7 @@ export function CharacterDetailsCard({
 									className={styles["character-details-card__favorite-icon"]}
 								/>
 							)}
-						</div>
+						</button>
 					</div>
 					<div className={styles["character-details-card__info-description"]}>
 						<p

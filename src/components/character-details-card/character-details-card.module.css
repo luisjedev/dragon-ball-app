@@ -56,12 +56,15 @@
 	width: 100%;
 }
 
-.character-details-card__info-favorite-icon-container {
+.character-details-card__favorite-icon-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 24px;
 	height: 21.68px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 
 .character-details-card__info-favorite-icon {

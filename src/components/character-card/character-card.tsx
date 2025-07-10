@@ -2,11 +2,14 @@ import { Link } from "@tanstack/react-router";
 
 import Like from "@/assets/icons/like.svg?react";
 import LikeOutline from "@/assets/icons/like-outline.svg?react";
+import { useFavoritesStore } from "@/stores/favorites-store";
 import type { MappedCharacter } from "@/types/characters-types";
 import styles from "./character-card.module.css";
 
 export function CharacterCard({ character }: { character: MappedCharacter }) {
-	const isFavorite = false;
+	const isFavorite = useFavoritesStore((state) =>
+		state.isFavorite(character.id),
+	);
 
 	return (
 		<Link
