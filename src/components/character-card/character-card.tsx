@@ -16,12 +16,13 @@ export function CharacterCard({ character }: { character: MappedCharacter }) {
 			to="/details/$id"
 			params={{ id: character.id }}
 			className={styles["character-card"]}
+			aria-label={`View details for ${character.name}`}
 			data-testid="character-card"
 		>
 			<div className={styles["character-card__image-container"]}>
 				<img
 					src={character.image}
-					alt={character.name}
+					aria-hidden
 					className={styles["character-card__image"]}
 				/>
 			</div>
