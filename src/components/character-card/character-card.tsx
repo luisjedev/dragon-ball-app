@@ -16,6 +16,7 @@ export function CharacterCard({ character }: { character: MappedCharacter }) {
 			to="/details/$id"
 			params={{ id: character.id }}
 			className={styles["character-card"]}
+			data-testid="character-card"
 		>
 			<div className={styles["character-card__image-container"]}>
 				<img

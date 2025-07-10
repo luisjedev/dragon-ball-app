@@ -9,7 +9,7 @@ export function Header() {
 
 	return (
 		<header className={styles["header"]}>
-			<div className={styles["header__container"]}>
+			<nav className={styles["header__container"]}>
 				<Link to="/" className={styles["header__logo-link"]}>
 					<img src={logo} alt="logo" className={styles["header__logo"]} />
 				</Link>
@@ -21,7 +21,7 @@ export function Header() {
 						{favoritesCount}
 					</span>
 				</Link>
-			</div>
+			</nav>
 		</header>
 	);
 }
