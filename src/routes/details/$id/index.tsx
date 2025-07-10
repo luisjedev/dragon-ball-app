@@ -5,23 +5,6 @@ import { TransformationsList } from "@/components/transformations-list/transform
 import { characterByIdQueryOptions } from "@/services/get-character-by-id";
 
 export const Route = createFileRoute("/details/$id/")({
-	head: () => ({
-		meta: [
-			{
-				name: "description",
-				content: "Character details",
-			},
-			{
-				title: "Character details",
-			},
-		],
-		links: [
-			{
-				rel: "icon",
-				href: "/favicon.ico",
-			},
-		],
-	}),
 	parseParams: (params) => ({
 		id: Number(params.id),
 	}),

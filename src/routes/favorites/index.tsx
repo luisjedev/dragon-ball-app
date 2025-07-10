@@ -7,23 +7,6 @@ import { useGetFavoritesCharacters } from "@/services/get-favorites-characters";
 import { useFavoritesStore } from "@/stores/favorites-store";
 
 export const Route = createFileRoute("/favorites/")({
-	head: () => ({
-		meta: [
-			{
-				name: "description",
-				content: "Favorites characters",
-			},
-			{
-				title: "Favorites characters",
-			},
-		],
-		links: [
-			{
-				rel: "icon",
-				href: "/favicon.ico",
-			},
-		],
-	}),
 	component: RouteComponent,
 });
 
