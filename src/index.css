@@ -69,6 +69,57 @@ svg {
 
 .home-container {
 	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 24px;
+}
+
+.home-search-container {
+	width: 100%;
+	max-width: 1416px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 12px 0;
+	justify-content: center;
+}
+
+.home-search-input-container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid black;
+}
+
+.home-search-results {
+	font-size: 12px;
+}
+
+.home-search-input {
+	flex: 1;
+	line-height: 100%;
+	letter-spacing: 0%;
+	font-style: normal;
+	font-weight: 400;
+	border: none;
+	outline: none;
+}
+
+.home-search-icon-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 12px;
+	height: 12px;
+}
+
+.home-search-icon {
+	width: 100%;
+	height: 100%;
 }
 
 .home-character-list {
@@ -90,12 +141,12 @@ svg {
 	justify-content: center;
 	gap: 48px;
 	padding-bottom: 48px;
-	animation: slideFromTop 500ms ease-out;
+	animation: slideFromTop 400ms ease-out;
 }
 
 @keyframes slideFromTop {
 	0% {
-		transform: translateY(-40px);
+		transform: translateY(-60px);
 	}
 	100% {
 		transform: translateY(0);
