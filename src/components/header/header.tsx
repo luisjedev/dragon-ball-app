@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import Like from "@/assets/icons/like.svg?react";
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/logo.webp";
 import { useFavoritesStore } from "@/stores/favorites-store";
 import styles from "./header.module.css";
 

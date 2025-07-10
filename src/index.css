@@ -80,6 +80,7 @@ svg {
 
 .home-title {
 	padding-top: 8px;
+	max-width: 1416px;
 	text-align: start;
 	width: 100%;
 	font-size: 24px;
