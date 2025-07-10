@@ -3,6 +3,9 @@
 	justify-content: center;
 	background-color: #000000;
 	padding: 16px;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 }
 
 .header__container {

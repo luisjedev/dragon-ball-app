@@ -90,4 +90,14 @@ svg {
 	justify-content: center;
 	gap: 48px;
 	padding-bottom: 48px;
+	animation: slideFromTop 500ms ease-out;
+}
+
+@keyframes slideFromTop {
+	0% {
+		transform: translateY(-40px);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }

@@ -21,13 +21,13 @@ function RouteComponent() {
 	const { data } = useSuspenseQuery(characterByIdQueryOptions(id));
 
 	return (
-		<main className={"details-container"}>
-			<Suspense fallback={<div>Loading...</div>}>
-				<ErrorBoundary fallbackRender={() => <div>Error</div>}>
+		<Suspense fallback={<div>Loading...</div>}>
+			<ErrorBoundary fallbackRender={() => <div>Error</div>}>
+				<main className={"details-container"}>
 					<CharacterDetailsCard character={data} />
 					<TransformationsList transformations={data.transformations} />
-				</ErrorBoundary>
-			</Suspense>
-		</main>
+				</main>
+			</ErrorBoundary>
+		</Suspense>
 	);
 }

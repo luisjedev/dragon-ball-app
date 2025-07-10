@@ -74,6 +74,13 @@
 	font-family: "Roboto-condensed-bold", sans-serif;
 }
 
+.character-details-card__info-description {
+	display: flex;
+	justify-content: start;
+	align-items: start;
+	width: 100%;
+}
+
 .character-details-card__info-description-text {
 	font-size: 16px;
 	overflow: hidden;
