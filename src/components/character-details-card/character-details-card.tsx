@@ -27,7 +27,10 @@ export function CharacterDetailsCard({
 				</div>
 				<main className={styles["character-details-card__info"]}>
 					<div className={styles["character-details-card__info-content"]}>
-						<p className={styles["character-details-card__info-name"]}>
+						<p
+							className={styles["character-details-card__info-name"]}
+							data-testid="character-details-card__info-name"
+						>
 							{character.name.toLocaleUpperCase()}
 						</p>
 						<button
