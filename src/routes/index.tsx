@@ -7,6 +7,23 @@ import { useDebounce } from "@/hooks/use-debounce";
 import { charactersQueryOptions } from "@/services/get-characters";
 
 export const Route = createFileRoute("/")({
+	head: () => ({
+		meta: [
+			{
+				name: "description",
+				content: "Search for your favorite Dragon Ball characters",
+			},
+			{
+				title: "Dragon Ball Characters",
+			},
+		],
+		links: [
+			{
+				rel: "icon",
+				href: "/favicon.ico",
+			},
+		],
+	}),
 	loader: ({ context: { queryClient } }) => {
 		return queryClient.ensureQueryData(charactersQueryOptions());
 	},

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Allow: /assets/
+Allow: /public/
+
+Crawl-delay: 1
