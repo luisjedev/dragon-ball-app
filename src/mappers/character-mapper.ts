@@ -17,7 +17,7 @@ export function mapCharacters(characters: Character[]): MappedCharacter[] {
 }
 
 export function mapCharacterDetail(
-	character: CharacterDetailResponse,
+	character: CharacterDetailResponse
 ): CharacterDetailMapped {
 	return {
 		id: character.id,

@@ -10,10 +10,10 @@ export function Header() {
 	return (
 		<header className={styles["header"]}>
 			<nav className={styles["header__container"]}>
-				<Link to="/" className={styles["header__logo-link"]}>
-					<img src={logo} alt="logo" className={styles["header__logo"]} />
+				<Link className={styles["header__logo-link"]} to="/">
+					<img alt="logo" className={styles["header__logo"]} src={logo} />
 				</Link>
-				<Link to="/favorites" className={styles["header__favorite-container"]}>
+				<Link className={styles["header__favorite-container"]} to="/favorites">
 					<div className={styles["header__favorite-icon-container"]}>
 						<Like className={styles["header__favorite-icon"]} />
 					</div>

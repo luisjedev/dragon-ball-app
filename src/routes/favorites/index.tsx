@@ -21,7 +21,7 @@ function RouteComponent() {
 		.filter((character) => character !== undefined);
 
 	const filteredData = data.filter((character) =>
-		character.name.toLowerCase().includes(debouncedSearch.toLowerCase()),
+		character.name.toLowerCase().includes(debouncedSearch.toLowerCase())
 	);
 
 	return (
@@ -33,13 +33,13 @@ function RouteComponent() {
 						<SearchIcon className={"home-search-icon"} />
 					</div>
 					<input
-						type="text"
+						className={"home-search-input"}
 						id="home-search-input"
 						name="home-search-input"
-						placeholder="SEARCH A CHARACTER..."
-						className={"home-search-input"}
-						value={inputValue}
 						onChange={(e) => setInputValue(e.target.value)}
+						placeholder="SEARCH A CHARACTER..."
+						type="text"
+						value={inputValue}
 					/>
 				</div>
 				<span className={"home-search-results"}>

@@ -10,9 +10,9 @@ export function TransformationCard({
 		<article className={styles["transformation-card"]}>
 			<div className={styles["transformation-card__image-container"]}>
 				<img
-					src={transformation.image}
 					alt={transformation.name}
 					className={styles["transformation-card__image"]}
+					src={transformation.image}
 				/>
 			</div>
 			<div className={styles["transformation-card__info"]}>

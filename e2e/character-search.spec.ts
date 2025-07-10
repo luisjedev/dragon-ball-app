@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+const characterDetailsRegex = /\/details\/\d+/;
+
 test("should filter characters by name and navigate to character details", async ({
 	page,
 }) => {
@@ -15,7 +17,7 @@ test("should filter characters by name and navigate to character details", async
 
 	await characterCard.click();
 
-	await expect(page).toHaveURL(/\/details\/\d+/);
+	await expect(page).toHaveURL(characterDetailsRegex);
 
 	await expect(page.locator("p")).toContainText("GOKU");
 });

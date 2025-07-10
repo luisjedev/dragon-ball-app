@@ -47,6 +47,6 @@ if (!rootElement.innerHTML) {
 			persistOptions={{ persister }}
 		>
 			<RouterProvider router={router} />
-		</PersistQueryClientProvider>,
+		</PersistQueryClientProvider>
 	);
 }

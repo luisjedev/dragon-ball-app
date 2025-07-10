@@ -7,7 +7,9 @@ export function TransformationsList({
 }: {
 	transformations: Transformation[];
 }) {
-	if (transformations.length === 0) return null;
+	if (transformations.length === 0) {
+		return null;
+	}
 
 	return (
 		<section className={styles["transformation-list-container"]}>

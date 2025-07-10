@@ -10,7 +10,7 @@ export function CharacterDetailsCard({
 	character: CharacterDetailMapped;
 }) {
 	const isFavorite = useFavoritesStore((state) =>
-		state.isFavorite(character.id),
+		state.isFavorite(character.id)
 	);
 	const toggleFavorite = useFavoritesStore((state) => state.toggleFavorite);
 
@@ -19,9 +19,9 @@ export function CharacterDetailsCard({
 			<div className={styles["character-details-card"]}>
 				<div className={styles["character-details-card__image-container"]}>
 					<img
-						src={character.image}
 						alt={character.name}
 						className={styles["character-details-card__image"]}
+						src={character.image}
 					/>
 				</div>
 				<main className={styles["character-details-card__info"]}>
@@ -30,9 +30,9 @@ export function CharacterDetailsCard({
 							{character.name.toLocaleUpperCase()}
 						</p>
 						<button
-							type="button"
-							onClick={() => toggleFavorite(character.id)}
 							className={styles["character-details-card__favorite-icon-button"]}
+							onClick={() => toggleFavorite(character.id)}
+							type="button"
 						>
 							{isFavorite ? (
 								<Like

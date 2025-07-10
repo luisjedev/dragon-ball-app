@@ -12,13 +12,13 @@ async function getCharacters({
 }): Promise<CharactersResponse | Character[]> {
 	try {
 		const response = await httpClient.get<CharactersResponse | Character[]>(
-			`/characters`,
+			"/characters",
 			{
 				params: {
 					limit: limit ?? import.meta.env.VITE_LIMIT_PER_CALL,
 					name,
 				},
-			},
+			}
 		);
 		return response.data;
 	} catch (error) {

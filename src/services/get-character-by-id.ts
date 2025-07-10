@@ -4,16 +4,15 @@ import { mapCharacterDetail } from "@/mappers/character-mapper";
 import type { CharacterDetailResponse } from "@/types/character-types";
 
 export async function getCharacterById(
-	id: number,
+	id: number
 ): Promise<CharacterDetailResponse> {
 	try {
 		const response = await httpClient.get<CharacterDetailResponse>(
-			`/characters/${id}`,
+			`/characters/${id}`
 		);
 		return response.data;
 	} catch (error) {
-		console.error("ERROR", error);
-		throw error;
+		throw new Error("Error fetching character by id", { cause: error });
 	}
 }
 

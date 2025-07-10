@@ -8,22 +8,22 @@ import styles from "./character-card.module.css";
 
 export function CharacterCard({ character }: { character: MappedCharacter }) {
 	const isFavorite = useFavoritesStore((state) =>
-		state.isFavorite(character.id),
+		state.isFavorite(character.id)
 	);
 
 	return (
 		<Link
-			to="/details/$id"
-			params={{ id: character.id }}
-			className={styles["character-card"]}
 			aria-label={`View details for ${character.name}`}
+			className={styles["character-card"]}
 			data-testid="character-card"
+			params={{ id: character.id }}
+			to="/details/$id"
 		>
 			<div className={styles["character-card__image-container"]}>
 				<img
-					src={character.image}
 					aria-hidden
 					className={styles["character-card__image"]}
+					src={character.image}
 				/>
 			</div>
 			<div className={styles["character-card__content"]}>

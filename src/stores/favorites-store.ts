@@ -25,7 +25,7 @@ export const useFavoritesStore = create<FavoritesState>()(
 			removeFavorite: (id: number) => {
 				set((state) => ({
 					favoriteIds: state.favoriteIds.filter(
-						(favoriteId) => favoriteId !== id,
+						(favoriteId) => favoriteId !== id
 					),
 				}));
 			},
@@ -45,6 +45,6 @@ export const useFavoritesStore = create<FavoritesState>()(
 		}),
 		{
 			name: "dragon-ball-favorites",
-		},
-	),
+		}
+	)
 );
