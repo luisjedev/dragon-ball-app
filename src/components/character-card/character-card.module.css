@@ -25,6 +25,10 @@
 	transition: background-size 300ms ease;
 }
 
+.character-card:hover .character-card__content {
+	background-size: 100% 100%;
+}
+
 .character-card__image-container {
 	padding: 10px 10px 0 10px;
 	width: 172.5px;
@@ -45,13 +49,13 @@
 
 .character-card__name {
 	margin: 0;
-	font-size: 14px;
+	font-size: 0.875rem;
 	color: white;
 }
 
-.character-card__favorite-icon {
-	width: 12px;
-	height: 10.84px;
+.character-card__favorite-icon-container {
+	width: 13px;
+	height: 11px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -61,13 +65,13 @@
 		filter 300ms ease;
 }
 
-.character-card:hover .character-card__favorite-icon {
-	filter: brightness(0) invert(1);
-}
-
-.character-card__favorite-icon svg {
+.character-card__favorite-icon {
 	width: 100%;
 	height: 100%;
+}
+
+.character-card:hover .character-card__favorite-icon-container {
+	filter: brightness(0) invert(1);
 }
 
 @media (min-width: 1024px) {

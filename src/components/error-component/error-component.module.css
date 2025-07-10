@@ -10,13 +10,13 @@
 }
 
 .error-icon {
-	font-size: 64px;
+	font-size: 4rem;
 	margin-bottom: 24px;
 }
 
 .error-title {
 	font-family: "Roboto-condensed-bold", sans-serif;
-	font-size: 32px;
+	font-size: 2rem;
 	font-weight: 700;
 	color: #d32f2f;
 	margin: 0;

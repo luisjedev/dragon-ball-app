@@ -39,8 +39,12 @@ export function CharacterCard({
 				<p className={styles["character-card__name"]}>
 					{character.name.toLocaleUpperCase()}
 				</p>
-				<div className={styles["character-card__favorite-icon"]}>
-					{isFavorite ? <Like /> : <LikeOutline />}
+				<div className={styles["character-card__favorite-icon-container"]}>
+					{isFavorite ? (
+						<Like className={styles["character-card__favorite-icon"]} />
+					) : (
+						<LikeOutline className={styles["character-card__favorite-icon"]} />
+					)}
 				</div>
 			</div>
 		</Link>

@@ -72,7 +72,7 @@
 }
 
 .character-details-card__info-name {
-	font-size: 32px;
+	font-size: 2rem;
 	font-family: "Roboto-condensed-bold", sans-serif;
 }
 
@@ -84,7 +84,6 @@
 }
 
 .character-details-card__info-description-text {
-	font-size: 16px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;

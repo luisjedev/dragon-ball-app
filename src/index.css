@@ -62,10 +62,10 @@ svg {
 	*,
 	*::before,
 	*::after {
-		animation-duration: 0.01ms;
-		animation-iteration-count: 1;
-		transition: none;
-		scroll-behavior: auto;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition: none !important;
+		scroll-behavior: auto !important;
 	}
 }
 
@@ -83,7 +83,7 @@ svg {
 	max-width: 1416px;
 	text-align: start;
 	width: 100%;
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-family: "Roboto-condensed-bold", sans-serif;
 	letter-spacing: 0%;
 	font-style: normal;
@@ -109,13 +109,12 @@ svg {
 }
 
 .home-search-results {
-	font-size: 12px;
+	font-size: 0.75rem;
 }
 
 .home-search-input {
 	flex: 1;
 	line-height: 100%;
-	letter-spacing: 0%;
 	font-style: normal;
 	font-weight: 400;
 	border: none;
