@@ -22,8 +22,7 @@ async function getCharacters({
 		);
 		return response.data;
 	} catch (error) {
-		console.error("ERROR", error);
-		throw error;
+		throw new Error("Error fetching characters", { cause: error });
 	}
 }
 

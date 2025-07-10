@@ -27,7 +27,7 @@
 }
 
 .transformation-list::-webkit-scrollbar {
-	height: 6px;
+	height: 4px;
 	margin: 0 16px;
 }
 

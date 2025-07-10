@@ -5,6 +5,8 @@ import "@/index.css";
 import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persister";
 import { QueryClient } from "@tanstack/react-query";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
+import { ErrorComponent } from "./components/error-component/error-component";
+import { NotFoundComponent } from "./components/not-found-component/not-found-component";
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -23,6 +25,8 @@ const router = createRouter({
 	defaultPreload: "intent",
 	defaultPreloadStaleTime: 0,
 	scrollRestoration: true,
+	defaultErrorComponent: () => <ErrorComponent />,
+	defaultNotFoundComponent: () => <NotFoundComponent />,
 });
 declare module "@tanstack/react-router" {
 	interface Register {
