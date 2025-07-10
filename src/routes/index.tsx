@@ -26,13 +26,13 @@ function Index() {
 						<SearchIcon className={"home-search-icon"} />
 					</div>
 					<input
-						type="text"
+						className={"home-search-input"}
 						id="home-search-input"
 						name="home-search-input"
-						placeholder="SEARCH A CHARACTER..."
-						className={"home-search-input"}
-						value={inputValue}
 						onChange={(e) => setInputValue(e.target.value)}
+						placeholder="SEARCH A CHARACTER..."
+						type="text"
+						value={inputValue}
 					/>
 				</div>
 				<span className={"home-search-results"}>
@@ -40,9 +40,12 @@ function Index() {
 				</span>
 			</div>
 			<ul className={"home-character-list"}>
-				{data?.map((character) => (
+				{data?.map((character, index) => (
 					<li key={character.id}>
-						<CharacterCard character={character} />
+						<CharacterCard
+							character={character}
+							loading={index < 10 ? "eager" : "lazy"}
+						/>
 					</li>
 				))}
 			</ul>

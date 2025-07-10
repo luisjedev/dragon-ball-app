@@ -12,6 +12,7 @@ export function TransformationCard({
 				<img
 					alt={transformation.name}
 					className={styles["transformation-card__image"]}
+					loading="lazy"
 					src={transformation.image}
 				/>
 			</div>

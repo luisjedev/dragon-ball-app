@@ -21,6 +21,7 @@ export function CharacterDetailsCard({
 					<img
 						alt={character.name}
 						className={styles["character-details-card__image"]}
+						loading="eager"
 						src={character.image}
 					/>
 				</div>

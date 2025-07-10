@@ -49,9 +49,12 @@ function RouteComponent() {
 				</span>
 			</div>
 			<ul className={"home-character-list"}>
-				{filteredData?.map((character) => (
+				{filteredData?.map((character, index) => (
 					<li key={character.id}>
-						<CharacterCard character={character} />
+						<CharacterCard
+							character={character}
+							loading={index < 10 ? "eager" : "lazy"}
+						/>
 					</li>
 				))}
 			</ul>

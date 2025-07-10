@@ -6,7 +6,15 @@ import { useFavoritesStore } from "@/stores/favorites-store";
 import type { MappedCharacter } from "@/types/characters-types";
 import styles from "./character-card.module.css";
 
-export function CharacterCard({ character }: { character: MappedCharacter }) {
+interface CharacterCardProps {
+	character: MappedCharacter;
+	loading?: "eager" | "lazy";
+}
+
+export function CharacterCard({
+	character,
+	loading = "lazy",
+}: CharacterCardProps) {
 	const isFavorite = useFavoritesStore((state) =>
 		state.isFavorite(character.id)
 	);
@@ -23,6 +31,7 @@ export function CharacterCard({ character }: { character: MappedCharacter }) {
 				<img
 					aria-hidden
 					className={styles["character-card__image"]}
+					loading={loading}
 					src={character.image}
 				/>
 			</div>

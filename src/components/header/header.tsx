@@ -11,7 +11,12 @@ export function Header() {
 		<header className={styles["header"]}>
 			<nav className={styles["header__container"]}>
 				<Link className={styles["header__logo-link"]} to="/">
-					<img alt="logo" className={styles["header__logo"]} src={logo} />
+					<img
+						alt="logo"
+						className={styles["header__logo"]}
+						loading="eager"
+						src={logo}
+					/>
 				</Link>
 				<Link className={styles["header__favorite-container"]} to="/favorites">
 					<div className={styles["header__favorite-icon-container"]}>
