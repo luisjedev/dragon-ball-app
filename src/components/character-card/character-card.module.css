@@ -53,9 +53,11 @@
 	color: white;
 }
 
-.character-card__favorite-icon-container {
+.character-card__favorite-button {
 	width: 13px;
 	height: 11px;
+	background-color: transparent;
+	border: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -70,7 +72,7 @@
 	height: 100%;
 }
 
-.character-card:hover .character-card__favorite-icon-container {
+.character-card:hover .character-card__favorite-button {
 	filter: brightness(0) invert(1);
 }
 

@@ -18,6 +18,7 @@ export function CharacterCard({
 	const isFavorite = useFavoritesStore((state) =>
 		state.isFavorite(character.id)
 	);
+	const toggleFavorite = useFavoritesStore((state) => state.toggleFavorite);
 
 	return (
 		<Link
@@ -39,13 +40,20 @@ export function CharacterCard({
 				<p className={styles["character-card__name"]}>
 					{character.name.toLocaleUpperCase()}
 				</p>
-				<div className={styles["character-card__favorite-icon-container"]}>
+				<button
+					className={styles["character-card__favorite-button"]}
+					onClick={(e) => {
+						e.preventDefault();
+						toggleFavorite(character.id);
+					}}
+					type="button"
+				>
 					{isFavorite ? (
 						<Like className={styles["character-card__favorite-icon"]} />
 					) : (
 						<LikeOutline className={styles["character-card__favorite-icon"]} />
 					)}
-				</div>
+				</button>
 			</div>
 		</Link>
 	);
