@@ -1,5 +1,5 @@
 import { queryOptions } from "@tanstack/react-query";
-import { httpClient } from "@/config/http-client";
+import { httpClient } from "@/lib/http-client";
 import { mapCharacterDetail } from "@/mappers/character-mapper";
 import type { CharacterDetailResponse } from "@/types/character-types";
 
